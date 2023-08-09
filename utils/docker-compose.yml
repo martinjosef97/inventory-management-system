@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  php-webapp:
+    image: inmsys:0.1.0
+    ports:
+      - "8080:80"
+    env_file:
+      - ../.env
+    depends_on:
+      - database
+    networks:
+      - appnetwork
+  database:
+    image: docker.io/library/mariadb:10.6.14
+    ports:
+      - "3306:3306"
+    volumes:
+      - ../inc/config/shop_inventory.sql:/docker-entrypoint-initdb.d/init.sql
+    env_file:
+      - ../.env
+    networks:
+      - appnetwork
+
+networks:
+  appnetwork:
