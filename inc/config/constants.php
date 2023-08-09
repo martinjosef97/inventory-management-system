@@ -15,10 +15,8 @@
 	try {
 		$dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
 		$dotenv->load();
-		#echo "Environment variables loaded successfully.\n";
-		$logger->info('Environment variables loaded successfully.\n');
+		$logger->info("Environment variables loaded successfully.\n");
 	} catch (Exception $e) {
-		#echo "Error loading environment variables: " . $e->getMessage() . "\n";
 		$logger->error("Error loading environment variables:" . $e->getMessage() . "\n");
 	}
 
