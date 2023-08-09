@@ -20,12 +20,14 @@
 		<div class="col-lg-2">
 		<h1 class="my-4"></h1>
 			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link" id="v-pills-reports-tab" data-toggle="pill" href="#v-pills-reports" role="tab" aria-controls="v-pills-reports" aria-selected="false">Inventory</a>   
+        	  <a class="nav-link" id="v-pills-reports-tab" data-toggle="pill" href="#v-pills-reports" role="tab" aria-controls="v-pills-reports" aria-selected="false">Inventory</a>   
 			  <a class="nav-link active" id="v-pills-item-tab" data-toggle="pill" href="#v-pills-item" role="tab" aria-controls="v-pills-item" aria-selected="true">Edit Items</a>
 			  <a class="nav-link" id="v-pills-purchase-tab" data-toggle="pill" href="#v-pills-purchase" role="tab" aria-controls="v-pills-purchase" aria-selected="false">Purchase Details</a>
 			  <a class="nav-link" id="v-pills-vendor-tab" data-toggle="pill" href="#v-pills-vendor" role="tab" aria-controls="v-pills-vendor" aria-selected="false">Register Suppliers</a>
 			  <a class="nav-link" id="v-pills-sale-tab" data-toggle="pill" href="#v-pills-sale" role="tab" aria-controls="v-pills-sale" aria-selected="false">Sales</a>
 			  <a class="nav-link" id="v-pills-customer-tab" data-toggle="pill" href="#v-pills-customer" role="tab" aria-controls="v-pills-customer" aria-selected="false">Dashboard</a>
+			  <!-- <a class="nav-link" id="v-pills-kiosk-tab" data-toggle="pill" href="model/kiosk/kiosk.php" role="tab" aria-controls="v-pills-kiosk" aria-selected="false">Kiosks Management</a>-->
+			  <a class="nav-link" id="v-pills-kiosk-tab" href="model/kiosk/kiosk.php" role="tab">Kiosks Management</a>
 			</div>
 		</div>
 		 <div class="col-lg-10">

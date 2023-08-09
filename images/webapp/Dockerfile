@@ -17,7 +17,7 @@ COPY ../../inc ./inc/
 COPY ../../model ./model/
 COPY ../../vendor ./vendor/
 COPY ../../.env .
+COPY ./images/webapp/conf/docker-php.conf /etc/apache2/conf-available
 
-RUN apt update && docker-php-ext-install pdo pdo_mysql
+RUN apt update && docker-php-ext-install pdo pdo_mysql && a2enmod rewrite
 EXPOSE 80
-#CMD ["php", "./login.php"]
