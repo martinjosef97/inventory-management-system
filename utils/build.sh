@@ -22,7 +22,7 @@ fi
 source .env
 
 echo "Building container image: ${WEBAPP_CONTAINER_IMAGE_NAME}"
-$EXECUTABLE "build --no-cache -t ${WEBAPP_CONTAINER_IMAGE_NAME}:${WEBAPP_CONTAINER_IMAGE_VERSION} -f ./images/webapp ."
+$EXECUTABLE "build" "--no-cache" "-t" "${WEBAPP_CONTAINER_IMAGE_NAME}:${WEBAPP_CONTAINER_IMAGE_VERSION}" "-f" "./images/webapp/Dockerfile" "."
 
 if [ `echo $?` -ne 0 ]
 then
