@@ -4,13 +4,22 @@
 	# like a server, container image or serverless platform.
 	require_once realpath(__DIR__ . '/../../vendor/autoload.php');
 	use Dotenv\Dotenv;
+	use Monolog\Level;
+	use Monolog\Logger;
+	use Monolog\Handler\StreamHandler;
 
+	# Create a log channel
+	$logger = new Logger('constants');
+	#$logger->pushHandler(new StreamHandler(__DIR__ . '../../logs/application.log', Level::Debug));
+	$logger->pushHandler(new StreamHandler("php://stdout"));
 	try {
 		$dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
 		$dotenv->load();
-		echo "Environment variables loaded successfully.\n";
+		#echo "Environment variables loaded successfully.\n";
+		$logger->info('Environment variables loaded successfully.\n');
 	} catch (Exception $e) {
-		echo "Error loading environment variables: " . $e->getMessage() . "\n";
+		#echo "Error loading environment variables: " . $e->getMessage() . "\n";
+		$logger->error("Error loading environment variables:" . $e->getMessage() . "\n");
 	}
 
 	// Root url for the site
