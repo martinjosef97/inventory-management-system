@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="kioskcss.css">
+        <link rel="stylesheet" href="https:fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Kiosk</title>
+    </head>
+    <body>
+        <input type="checkbox" id="cart">
+        <label for="cart" class="label-cart"><span class="fas fa-shopping-cart"></span></label>
+        <h3 class="logo">Kiosk System</h3>
+
+        <div class="sidebar">
+            <div class="sidebar-menu">
+                <span class="fas fa-search"></span>
+                <a href="#">Search</a>
+            </div>
+            <div class="sidebar-menu">
+                <span class="fas fa-home"></span>
+                <a href="#">Home</a>
+            </div>
+            <div class="sidebar-menu">
+                <span class="fas fa-sliders-h"></span>
+                <a href="#">Setting</a>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="dashboard-banner">
+                <img src="imgBanner.jpg">
+            </div>
+
+
+            <h3 class="dashboard-title">Welcome!!! Order Food</h3>
+            <div class="dashboard-menu">
+                <a href="#">ALL</a>
+                <a href="#">ZENSAI</a>
+                <a href="#">SALAD</a>
+                <a href="#">SASHIMI</a>
+                <a href="#">NIGIRIZUSHI</a>
+                <a href="#">MAKIZUSHI</a>
+                <a href="#">YAKIZAKANA</a>
+                <a href="#">KUSHIYAKI</a>
+                <a href="#">TEMPURA</a>
+                <a href="#">IPPIN RYORI</a>
+                <a href="#">DONMONO</a>
+                <a href="#">OCHAZUKE</a>
+                <a href="#">MEN</a>
+                <a href="#">RAMEN</a>
+                <a href="#">DRINKS</a>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <img class="card-image" src="Buta Kashira.png">
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <img class="card-image" src="Saba Shioyaki.png">
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <img class="card-image" src="Torimomo.png">
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <img class="card-image" src="Tori Teriyaki.png">
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <img class="card-image" src="Torikaraage.png">
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <img class="card-image" src="Agedashi Tofu.png">
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <img class="card-image" src="Torikawa.png">
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <img class="card-image" src="Katsu-Curry.png">
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <img class="card-image" src="Omurice.png">
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <img class="card-image" src="Okonomiyaki.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-order">
+            <h3>Order List</h3>
+            
+            <div class="order-wrapper">
+                <div class="order-card">
+                    <div class="order detail">
+                        <p>Lorem Ipsum Dolor</p>
+                        <i class="fas fa-times"></i> <input type="text" value="1">
+                    </div>
+                    <h4 class="order-price">₱ ---</h4>
+                </div>
+                <div class="order-card">
+                    <div class="order detail">
+                        <p>Lorem Ipsum Dolor</p>
+                        <i class="fas fa-times"></i> <input type="text" value="1">
+                    </div>
+                    <h4 class="order-price">₱ ---</h4>
+                </div>
+                <div class="order-card">
+                    <div class="order detail">
+                        <p>Lorem Ipsum Dolor</p>
+                        <i class="fas fa-times"></i> <input type="text" value="1">
+                    </div>
+                    <h4 class="order-price">₱ ---</h4>
+                </div>
+            </div>
+
+            <hr class="divider">
+            <div class="order-total">
+                <p>Subtotal <span>₱ ---</span></p>
+                <p>Number   <span>--</span></p>
+            </div>
+
+            <button class="checkout">Checkout</button>
+        </div>
+
+    </body>
+
+</html>
