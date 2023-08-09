@@ -19,5 +19,5 @@ COPY ../../vendor ./vendor/
 COPY ../../.env .
 
 RUN apt update && docker-php-ext-install pdo pdo_mysql
-
-CMD ["php", "./login.php"]
+EXPOSE 80
+#CMD ["php", "./login.php"]
