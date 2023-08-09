@@ -64,9 +64,9 @@ INSERT INTO `customer` (`customerID`, `fullName`, `email`, `mobile`, `phone2`, `
 --
 -- Table structure for table `item`
 --
-
-CREATE TABLE `item` (
-  `productID` int(11) NOT NULL,
+-- 8/9/2023: create table statement will only run now if it does not exists.
+CREATE TABLE IF NOT EXISTS `item` (
+  `productID` int(11) NOT NULL AUTO_INCREMENT,
   `itemNumber` varchar(255) NOT NULL,
   `itemName` varchar(255) NOT NULL,
   `discount` float NOT NULL DEFAULT '0',
@@ -74,24 +74,25 @@ CREATE TABLE `item` (
   `unitPrice` float NOT NULL DEFAULT '0',
   `imageURL` varchar(255) NOT NULL DEFAULT 'imageNotAvailable.jpg',
   `status` varchar(255) NOT NULL DEFAULT 'Active',
-  `description` text NOT NULL
+  `description` text NOT NULL,
+  PRIMARY KEY (`productID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `item`
 --
-
-INSERT INTO `item` (`productID`, `itemNumber`, `itemName`, `discount`, `stock`, `unitPrice`, `imageURL`, `status`, `description`) VALUES
-(34, '1', 'A4 Wagyu Beef', 0, 28, 1500, '1691311778_JW_A4_RIBSTEAK_500-600x400.png', 'Active', 'A4 Wagyu Beef'),
-(35, '2', 'Chicken Cutlet', 0, 5, 500, '1691311848_chicken-breast-650x353.jpg', 'Active', 'Chicken Cutlet'),
-(36, '3', 'Raw Salmon', 0, 5, 1300, '1691311941_raw-salmon-meat.jpg', 'Active', 'Raw Salmon'),
-(37, '4', 'Japanese Egg', 2, 6, 3409, '1691312018_pngwing.com.png', 'Active', 'Japanese Egg'),
-(38, '5', 'Japanese Rice', 2, 17, 1200, '1691312076_pngwing2.com.png', 'Active', 'Japanese Rice'),
-(39, '6', 'Pancake Mix', 0, 0, 3000, '1691312193_pancake mix.png', 'Active', 'Japanese Pancake Mix'),
-(40, '7', 'Soy Sauce', 1.5, 10, 1650, '1691312260_pngegg.png', 'Active', 'Soy Sauce'),
-(41, '8', 'Japanese Onion', 2.1, 9, 2300, '1691312326_Green-japanese-bunching-onion-on-transparent-background-PNG.png', 'Active', 'Japanese Onion'),
-(43, '9', 'Curry Sauce', 1, 92, 1000, '1691312410_curry mix.png', 'Active', 'Curry Sauce'),
-(45, '10', 'Fish Sauce', 1.5, 11, 1200, '1691312465_fish sauce.png', 'Active', 'Fish Sauce');
+-- 8/9/2023: Removed productID in the insert statement as this is already auto-incremental
+INSERT INTO `item` (`itemNumber`, `itemName`, `discount`, `stock`, `unitPrice`, `imageURL`, `status`, `description`) VALUES
+('1', 'A4 Wagyu Beef', 0, 28, 1500, '1691311778_JW_A4_RIBSTEAK_500-600x400.png', 'Active', 'A4 Wagyu Beef'),
+('2', 'Chicken Cutlet', 0, 5, 500, '1691311848_chicken-breast-650x353.jpg', 'Active', 'Chicken Cutlet'),
+('3', 'Raw Salmon', 0, 5, 1300, '1691311941_raw-salmon-meat.jpg', 'Active', 'Raw Salmon'),
+('4', 'Japanese Egg', 2, 6, 3409, '1691312018_pngwing.com.png', 'Active', 'Japanese Egg'),
+('5', 'Japanese Rice', 2, 17, 1200, '1691312076_pngwing2.com.png', 'Active', 'Japanese Rice'),
+('6', 'Pancake Mix', 0, 0, 3000, '1691312193_pancake mix.png', 'Active', 'Japanese Pancake Mix'),
+('7', 'Soy Sauce', 1.5, 10, 1650, '1691312260_pngegg.png', 'Active', 'Soy Sauce'),
+('8', 'Japanese Onion', 2.1, 9, 2300, '1691312326_Green-japanese-bunching-onion-on-transparent-background-PNG.png', 'Active', 'Japanese Onion'),
+('9', 'Curry Sauce', 1, 92, 1000, '1691312410_curry mix.png', 'Active', 'Curry Sauce'),
+('10', 'Fish Sauce', 1.5, 11, 1200, '1691312465_fish sauce.png', 'Active', 'Fish Sauce');
 
 -- --------------------------------------------------------
 
