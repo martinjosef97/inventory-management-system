@@ -370,10 +370,10 @@
 
           <div class="card">
             <div class="card-inner">
-              <h3>INGREDIENTS</h3>
+              <h3>ITEMS & INGREDIENTS</h3>
               <span class="material-icons-outlined">inventory_2</span>
             </div>
-            <h1>249</h1>
+            <h1><?php include './model/dashboard/controller/getListofItems.php'?></h1>
           </div>
 
           <div class="card">
