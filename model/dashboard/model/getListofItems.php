@@ -1,7 +1,7 @@
 <?php
 	# Import Monolog module
-	require_once(__DIR__ . '/../../../vendor/autoload.php');
-    require_once(__DIR__ . '/../../../../inc/config/db.php');
+	require_once realpath(__DIR__ . '/../../../vendor/autoload.php');
+    require_once realpath(__DIR__ . '/../../../inc/config/db.php');
 	use Monolog\Level;
 	use Monolog\Logger;
 	use Monolog\Handler\StreamHandler;
