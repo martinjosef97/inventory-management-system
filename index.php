@@ -26,7 +26,7 @@
 			  <a class="nav-link" id="v-pills-vendor-tab" data-toggle="pill" href="#v-pills-vendor" role="tab" aria-controls="v-pills-vendor" aria-selected="false">Register Suppliers</a>
 			  <a class="nav-link" id="v-pills-sale-tab" data-toggle="pill" href="#v-pills-sale" role="tab" aria-controls="v-pills-sale" aria-selected="false">Sales</a>
 			  <a class="nav-link" id="v-pills-customer-tab" data-toggle="pill" href="#v-pills-customer" role="tab" aria-controls="v-pills-customer" aria-selected="false">Dashboard</a>
-			  <!-- <a class="nav-link" id="v-pills-kiosk-tab" href="model/kiosk/kiosk.php" role="tab">Kiosks Management</a> 			  -->
+			  <a class="nav-link" id="v-pills-kiosk-tab" href="model/kiosk/kiosk.php" role="tab">Kiosks Management</a>
 			</div>
 		</div>
 		 <div class="col-lg-10">
@@ -373,7 +373,7 @@
               <span class="material-icons-outlined">inventory_2</span>
             </div>
 			<h1 id="itemCountContainer">
-    			<?php require './model/dashboard/model/getListofItems.php'; ?>
+    			<?php require './model/dashboard/getItemType.php'; ?>
   			</h1>
           </div>
           <div class="card">
