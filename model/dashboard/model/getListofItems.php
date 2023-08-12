@@ -13,7 +13,7 @@
     $logger->info("Start the running of script " . __FILE__);
     try {
         
-        $itemListQuery = 'SELECT COUNT(*) as itemCount FROM item';
+        $itemListQuery = 'SELECT COUNT(*) as item_count FROM item';
 
         $itemListStatement = $conn->prepare($itemListQuery);
         $itemListStatement->execute();
@@ -29,6 +29,7 @@
             $response["success"] = true;
             $response["itemCount"] = 0;
         }
+        $logger->info("Process successful.\n Response: " . json_encode($response));
     } catch (Exception $e) {
         $errorCode = $e->getCode();
         $errorMessage = $e->getMessage();
@@ -37,6 +38,5 @@
         echo "An error occurred. Please check the logs for more information.";
     }
 
-    header("Content-Type: application/json");
-    echo json_encode($response);
+    echo json_encode($response["itemCount"]);
 ?>
