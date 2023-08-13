@@ -27,8 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `customer`
 --
-
-CREATE TABLE `customer` (
+CREATE TABLE IF NOT EXISTS `customer` (
   `customerID` int(11) NOT NULL,
   `fullName` varchar(100) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
@@ -39,25 +38,32 @@ CREATE TABLE `customer` (
   `city` varchar(30) DEFAULT NULL,
   `district` varchar(30) NOT NULL,
   `status` varchar(255) NOT NULL DEFAULT 'Active',
-  `createdOn` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `createdOn` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`customerID`),
+  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`customerID`, `fullName`, `email`, `mobile`, `phone2`, `address`, `address2`, `city`, `district`, `status`, `createdOn`) VALUES
-(4, 'Tatsuro Yamashita', 'tatsuroyamashita1979@yahoo.com', 993737, 772484884, '219-1065, Wakayanagi, Shimohataoka', 'Kurihara-shi', 'Miyagi', 'Japan', 'Active', '2018-04-30 15:14:02'),
-(14, 'Aimi Fukada', 'aimifukada1995@gmail.com', 333829832, 0, '317-1072, Town House, ', 'Nishi-ku Hamatsu-shi', 'Shizuoka', 'Japan', 'Disabled', '2018-05-01 12:03:10'),
-(18, 'Asitha Silva', 'asitha@gmail.com', 777987654, 0, 'No. 3, Radcliff Avenue, School Lane', 'Kalutara South', 'Kalutara', 'Kalutara', 'Active', '2018-05-02 09:52:28'),
-(24, 'Sunil Perera', 'Sunil@gypsies.sound', 338393932, 413837293, '67/7, Perera Villa, Jayasekara Avenue', 'Mount Lavinia', 'Ratmalana', 'Colombo', 'Active', '2018-05-02 10:48:37'),
-(25, 'Theresa May', 'may34@uk.gov.com', 329393903, 777833737, '12, Downing Street', 'London', 'London', 'Matale', 'Active', '2018-05-03 02:28:07'),
-(26, 'Sachin Tendulkar', 'sachintendulkar@icc.com', 444958303, 84792838, '789-4, Apartment 3, ', 'Cric Complex', 'New Delhi', 'Puttalam', 'Active', '2018-05-03 02:28:38'),
-(38, 'Nuwan Perara', 'nuwan@yahoo.com', 839378202, 0, 'Nuwan Villa, Lower Street,', 'North Mulativu', 'Mullaitivu', 'Mullaitivu', 'Active', '2018-05-05 11:17:49'),
-(39, 'Amal Silverton', 'amals452@yahoo.com', 232345676, 0, 'Amal\'s House, Amal\'s Street,', 'Amal Road', 'Ambalangoda', 'Galle', 'Active', '2018-05-05 13:27:06'),
-(40, 'Andrew Symonds', 'symonds@cricket.au.com', 123, 0, '23, Oak View Avenue', 'Western Australia', 'Melbourne', 'Colombo', 'Disabled', '2018-05-13 01:20:23'),
-(41, 'Mark Taylor', '', 111, 0, '111', '', '', 'Colombo', 'Active', '2018-05-13 01:24:54'),
-(42, 'Nelson Mandela', 'sjobs@apple.com', 333829832, 0, '1st Floor, Apple House, ', 'Las Vegas Street', 'Las Vegas', 'Kalutara', 'Disabled', '2018-05-13 02:39:41');
+INSERT INTO `customer` (`fullName`, `email`, `mobile`, `phone2`, `address`, `address2`, `city`, `district`, `status`, `createdOn`) VALUES
+('Tatsuro Yamashita', 'tatsuroyamashita1979@yahoo.com', 993737, 772484884, '219-1065, Wakayanagi, Shimohataoka', 'Kurihara-shi', 'Miyagi', 'Japan', 'Active', '2018-04-30 15:14:02'),
+('Aimi Fukada', 'aimifukada1995@gmail.com', 333829832, 0, '317-1072, Town House, ', 'Nishi-ku Hamatsu-shi', 'Shizuoka', 'Japan', 'Disabled', '2018-05-01 12:03:10'),
+('Asitha Silva', 'asitha@gmail.com', 777987654, 0, 'No. 3, Radcliff Avenue, School Lane', 'Kalutara South', 'Kalutara', 'Kalutara', 'Active', '2018-05-02 09:52:28'),
+('Sunil Perera', 'Sunil@gypsies.sound', 338393932, 413837293, '67/7, Perera Villa, Jayasekara Avenue', 'Mount Lavinia', 'Ratmalana', 'Colombo', 'Active', '2018-05-02 10:48:37'),
+( 'Theresa May', 'may34@uk.gov.com', 329393903, 777833737, '12, Downing Street', 'London', 'London', 'Matale', 'Active', '2018-05-03 02:28:07'),
+('Sachin Tendulkar', 'sachintendulkar@icc.com', 444958303, 84792838, '789-4, Apartment 3, ', 'Cric Complex', 'New Delhi', 'Puttalam', 'Active', '2018-05-03 02:28:38'),
+('Nuwan Perara', 'nuwan@yahoo.com', 839378202, 0, 'Nuwan Villa, Lower Street,', 'North Mulativu', 'Mullaitivu', 'Mullaitivu', 'Active', '2018-05-05 11:17:49'),
+('Amal Silverton', 'amals452@yahoo.com', 232345676, 0, 'Amal\'s House, Amal\'s Street,', 'Amal Road', 'Ambalangoda', 'Galle', 'Active', '2018-05-05 13:27:06'),
+('Andrew Symonds', 'symonds@cricket.au.com', 123, 0, '23, Oak View Avenue', 'Western Australia', 'Melbourne', 'Colombo', 'Disabled', '2018-05-13 01:20:23'),
+('Mark Taylor', '', 111, 0, '111', '', '', 'Colombo', 'Active', '2018-05-13 01:24:54'),
+('Nelson Mandela', 'sjobs@apple.com', 333829832, 0, '1st Floor, Apple House, ', 'Las Vegas Street', 'Las Vegas', 'Kalutara', 'Disabled', '2018-05-13 02:39:41');
 
 -- --------------------------------------------------------
 
@@ -100,7 +106,7 @@ INSERT INTO `item` (`itemNumber`, `itemName`, `discount`, `stock`, `unitPrice`, 
 -- Table structure for table `purchase`
 --
 
-CREATE TABLE `purchase` (
+CREATE TABLE IF NOT EXISTS `purchase` (
   `purchaseID` int(11) NOT NULL,
   `itemNumber` varchar(255) NOT NULL,
   `purchaseDate` date NOT NULL,
@@ -116,12 +122,12 @@ CREATE TABLE `purchase` (
 --
 
 INSERT INTO `purchase` (`purchaseID`, `itemNumber`, `purchaseDate`, `itemName`, `unitPrice`, `quantity`, `vendorName`, `vendorID`) VALUES
-(39, '1', '2018-05-24', 'Agedashi Tofu', 1500, 28, 'Johnson and Johnsons Co.', 3),
-(40, '2', '2018-05-18', 'Agedashi Tofu', 1500, 28, 'Louise Vitton Bag', 4),
-(46, '3', '2018-05-07', 'Tori Teriyaki', 1650, 10, 'Johnson and Johnsons Co.', 3),
-(35, '4', '2018-05-24', 'Agedashi Tofu', 1500, 28, 'Louise Vitton Bag', 4),
-(43, '6', '2018-05-16', 'Torikaraage', 2300, 9, 'ABC Company', 1),
-(41, '7', '2018-05-21', 'Omurice', 1000, 92, 'Sample Vendor 222', 2);
+(1, '1', '2018-05-24', 'Agedashi Tofu', 1500, 28, 'Johnson and Johnsons Co.', 3),
+(2, '2', '2018-05-18', 'Agedashi Tofu', 1500, 28, 'Louise Vitton Bag', 4),
+(3, '3', '2018-05-07', 'Tori Teriyaki', 1650, 10, 'Johnson and Johnsons Co.', 3),
+(4, '4', '2018-05-24', 'Agedashi Tofu', 1500, 28, 'Louise Vitton Bag', 4),
+(5, '6', '2018-05-16', 'Torikaraage', 2300, 9, 'ABC Company', 1),
+(6, '7', '2018-05-21', 'Omurice', 1000, 92, 'Sample Vendor 222', 2);
 
 -- --------------------------------------------------------
 
@@ -181,8 +187,6 @@ INSERT INTO `user` (`userID`, `fullName`, `username`, `password`, `status`) VALU
 (6, 'a', 'a', '0cc175b9c0f1b6a831c399e269772661', 'Active'),
 (7, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Active');
 
--- --------------------------------------------------------
-
 --
 -- Table structure for table `vendor`
 --
@@ -216,21 +220,6 @@ INSERT INTO `vendor` (`vendorID`, `fullName`, `email`, `mobile`, `phone2`, `addr
 (9, 'A', 'a@gmail.com', 999995, 98866767, 'manila', 'Metro Manila', 'Manila City', 'NCR', 'Active', '2020-07-30 11:40:25');
 
 --
--- Indexes for dumped tables
---
-
---
--- Indexes for table `customer`
---
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`customerID`);
-
---
--- Indexes for table `item`
---
-
-
---
 -- Indexes for table `purchase`
 --
 ALTER TABLE `purchase`
@@ -253,17 +242,6 @@ ALTER TABLE `user`
 --
 ALTER TABLE `vendor`
   ADD PRIMARY KEY (`vendorID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `customer`
---
-ALTER TABLE `customer`
-  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
-
 
 --
 -- AUTO_INCREMENT for table `purchase`

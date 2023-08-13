@@ -20,14 +20,13 @@
 		<div class="col-lg-2">
 		<h1 class="my-4"></h1>
 			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        	  <a class="nav-link" id="v-pills-reports-tab" data-toggle="pill" href="#v-pills-reports" role="tab" aria-controls="v-pills-reports" aria-selected="false">Inventory</a>   
-			  <a class="nav-link active" id="v-pills-item-tab" data-toggle="pill" href="#v-pills-item" role="tab" aria-controls="v-pills-item" aria-selected="true">Edit Items</a>
+        	  <a class="nav-link" id="v-pills-reports-tab" data-toggle="pill" href="#v-pills-reports" role="tab" aria-controls="v-pills-reports" aria-selected="true">Inventory</a>   
+			  <a class="nav-link active" id="v-pills-item-tab" data-toggle="pill" href="#v-pills-item" role="tab" aria-controls="v-pills-item" aria-selected="false">Edit Items</a>
 			  <a class="nav-link" id="v-pills-purchase-tab" data-toggle="pill" href="#v-pills-purchase" role="tab" aria-controls="v-pills-purchase" aria-selected="false">Purchase Details</a>
 			  <a class="nav-link" id="v-pills-vendor-tab" data-toggle="pill" href="#v-pills-vendor" role="tab" aria-controls="v-pills-vendor" aria-selected="false">Register Suppliers</a>
 			  <a class="nav-link" id="v-pills-sale-tab" data-toggle="pill" href="#v-pills-sale" role="tab" aria-controls="v-pills-sale" aria-selected="false">Sales</a>
 			  <a class="nav-link" id="v-pills-customer-tab" data-toggle="pill" href="#v-pills-customer" role="tab" aria-controls="v-pills-customer" aria-selected="false">Dashboard</a>
-			  <!-- <a class="nav-link" id="v-pills-kiosk-tab" data-toggle="pill" href="model/kiosk/kiosk.php" role="tab" aria-controls="v-pills-kiosk" aria-selected="false">Kiosks Management</a>-->
-			  <a class="nav-link" id="v-pills-kiosk-tab" href="model/kiosk/kiosk.php" role="tab">Kiosks Management</a>
+			  <!--<a class="nav-link" id="v-pills-kiosk-tab" href="model/kiosk/kiosk.php" role="tab">Kiosks Management</a>-->
 			</div>
 		</div>
 		 <div class="col-lg-10">
@@ -341,16 +340,8 @@
 			  <!--Start of Dashboard-->
 			  <div class="tab-pane fade" id="v-pills-customer" role="tabpanel" aria-labelledby="v-pills-customer-tab">
 				<div class="card card-outline-secondary my-4">
-				  <div class="card-header">Dashboard</div>
+				  <div class="card-header"><h1>Dashboard</h1></div>
 				  <div class="card-body">
-
-
-    <!-- Montserrat Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-
     
   </head>
   <body>
@@ -370,20 +361,50 @@
 
           <div class="card">
             <div class="card-inner">
-              <h3>ITEMS & INGREDIENTS</h3>
+              <h3>PRODUCT TYPES IN STORE</h3>
               <span class="material-icons-outlined">inventory_2</span>
             </div>
-            <h1><?php include './model/dashboard/controller/getListofItems.php'?></h1>
+			<h1 id="itemCountContainer">
+				<?php require './model/dashboard/getItemType.php'; ?>
+  			</h1>
           </div>
-
           <div class="card">
             <div class="card-inner">
-              <h3>SUPPLIES</h3>
+              <h3>CURRENT SUPPLY COUNT</h3>
               <span class="material-icons-outlined">category</span>
             </div>
-            <h1>25</h1>
+            <h1 id="itemSupplyCountContainer">
+				<?php require './model/dashboard/getItemStockCount.php'; ?>
+			</h1>
           </div>
 
+		  <div class="card">
+			<div class="card-inner">
+				<h3>ACTIVE VENDORS</h3>
+				<span class="material-icons-outlined">person</span>
+			</div>
+			<h1 id="activeVendorCountContainer">
+				<?php require './model/dashboard/getActiveVendors.php'; ?>
+			</h1>
+		  </div>
+		  <div class="card">
+			<div class="card-inner">
+				<h3>TOTAL PRODUCTS SOLD</h3>
+				<span class="material-icons-outlined">shopping_bag</span>
+			</div>
+			<h1 id="soldTotalProductsContainer">
+				<?php require './model/dashboard/getItemOverallSoldCount.php'; ?>
+			</h1>
+		  </div>
+		  <div class="card">
+			<div class="card-inner">
+				<h3>TOTAL PRODUCTS SOLD (WEEKLY)</h3>
+				<span class="material-icons-outlined">shopping_bag</span>
+			</div>
+			<h1 id="soldWeeklyProductsContainer">
+				<?php require './model/dashboard/getItemWeeklySoldCount.php'; ?>
+			</h1>
+		  </div>
           <div class="card">
             <div class="card-inner">
               <h3>ONGOING ORDERS</h3>
@@ -391,15 +412,6 @@
             </div>
             <h1>1500</h1>
           </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <h3>ALERTS</h3>
-              <span class="material-icons-outlined">notification_important</span>
-            </div>
-            <h1>56</h1>
-          </div>
-
         </div>
       </main>
       <!-- End Main -->
