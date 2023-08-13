@@ -38,7 +38,7 @@
                 $productStockCount = $itemCountModel->getProductStockCount();
 
                 $response["success"] = true;
-                $response["itemCount"] = $productTypeCount;
+                $response["itemStockCount"] = $productStockCount;
                 $this->logger->info("Process successful.\n Response: " . json_encode($response));
             } catch (Exception $e) {
                 $errorCode = $e->getCode();

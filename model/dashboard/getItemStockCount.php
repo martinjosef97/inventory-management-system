@@ -5,7 +5,7 @@
     $jsonResponse = json_decode($response, true);
 
     if ($jsonResponse["success"] == true && isset($jsonResponse["success"])) {
-        echo $jsonResponse["itemCount"];
+        echo $jsonResponse["itemStockCount"];
     } else {
         echo $jsonResponse["error"];
     }

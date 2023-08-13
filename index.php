@@ -389,7 +389,7 @@
 		  <div class="card">
 			<div class="card-inner">
 				<h3>ACTIVE VENDORS</h3>
-				<span class="material-icons">person</span>
+				<span class="material-icons-outlined">person</span>
 			</div>
 			<h1 id="activeVendorCountContainer">
 				<?php require './model/dashboard/getActiveVendors.php'; ?>
