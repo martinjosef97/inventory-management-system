@@ -381,9 +381,20 @@
               <h3>SUPPLIES</h3>
               <span class="material-icons-outlined">category</span>
             </div>
-            <h1>25</h1>
+            <h1 id="itemSupplyCountContainer">
+				<?php require './model/dashboard/getItemStockCount.php'; ?>
+			</h1>
           </div>
 
+		  <div class="card">
+			<div class="card-inner">
+				<h3>ACTIVE VENDORS</h3>
+				<span class="material-icons">person</span>
+			</div>
+			<h1 id="activeVendorCountContainer">
+				<?php require './model/dashboard/getActiveVendors.php'; ?>
+			</h1>
+		  </div>
           <div class="card">
             <div class="card-inner">
               <h3>ONGOING ORDERS</h3>
