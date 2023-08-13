@@ -76,7 +76,7 @@
                 $weeklyProductSoldCount = $itemCountModel->getCurrentWeekProductSoldCount();
 
                 $response["success"] = true;
-                $response["itemWeeklySoldCount"] = $overallProductSoldCount;
+                $response["itemWeeklySoldCount"] = $weeklyProductSoldCount;
                 $this->logger->info("Process successful.\n Response: " . json_encode($response));
             } catch (Exception $e) {
                 $errorCode = $e->getCoode();

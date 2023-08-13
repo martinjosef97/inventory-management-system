@@ -44,7 +44,7 @@
             $sqlStatement = $this->conn->prepare($query);
             $sqlStatement->execute();
 
-            $result = $sqlStatement->fetch(PDO:FETCH_ASSOC);
+            $result = $sqlStatement->fetch(PDO::FETCH_ASSOC);
             if ($result !== false && isset($result['item_sold_count'])) {
                 return $result['item_sold_count'];
             } else {
@@ -61,7 +61,7 @@
             $sqlStatement = $this->conn->prepare($query);
             $sqlStatement->execute();
 
-            $result = $sqlStatement->fetch(PDO:FETCH_ASSOC);
+            $result = $sqlStatement->fetch(PDO::FETCH_ASSOC);
             if ($result !== false && isset($result['weekly_sold_count'])) {
                 return $result['weekly_sold_count'];
             } else {
