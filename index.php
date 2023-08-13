@@ -342,14 +342,6 @@
 				<div class="card card-outline-secondary my-4">
 				  <div class="card-header">Dashboard</div>
 				  <div class="card-body">
-
-
-    <!-- Montserrat Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-
     
   </head>
   <body>
@@ -378,7 +370,7 @@
           </div>
           <div class="card">
             <div class="card-inner">
-              <h3>SUPPLIES</h3>
+              <h3>SUPPLY COUNT</h3>
               <span class="material-icons-outlined">category</span>
             </div>
             <h1 id="itemSupplyCountContainer">
@@ -395,6 +387,24 @@
 				<?php require './model/dashboard/getActiveVendors.php'; ?>
 			</h1>
 		  </div>
+		  <div class="card">
+			<div class="card-inner">
+				<h3>TOTAL PRODUCTS SOLD</h3>
+				<span class="material-icons-outline">shopping_bag</span>
+			</div>
+			<h1 id="soldTotalProductsContainer">
+				<?php require './model/dashboard/getItemOverallSoldCount.php'; ?>
+			</h1>
+		  </div>
+		  <div class="card">
+			<div class="card-inner">
+				<h3>TOTAL PRODUCTS SOLD (WEEKLY)</h3>
+				<span class="material-icons-outline">shopping_bag</span>
+			</div>
+			<h1 id="soldWeeklyProductsContainer">
+				<?php require './model/dashboard/getItemWeeklySoldCount.php'; ?>
+			</h1>
+		  </div>
           <div class="card">
             <div class="card-inner">
               <h3>ONGOING ORDERS</h3>
@@ -402,15 +412,6 @@
             </div>
             <h1>1500</h1>
           </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <h3>ALERTS</h3>
-              <span class="material-icons-outlined">notification_important</span>
-            </div>
-            <h1>56</h1>
-          </div>
-
         </div>
       </main>
       <!-- End Main -->
