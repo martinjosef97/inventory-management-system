@@ -340,7 +340,7 @@
 			  <!--Start of Dashboard-->
 			  <div class="tab-pane fade" id="v-pills-customer" role="tabpanel" aria-labelledby="v-pills-customer-tab">
 				<div class="card card-outline-secondary my-4">
-				  <div class="card-header">Dashboard</div>
+				  <div class="card-header"><h1>Dashboard</h1></div>
 				  <div class="card-body">
     
   </head>
@@ -361,7 +361,7 @@
 
           <div class="card">
             <div class="card-inner">
-              <h3>PRODUCT TYPES</h3>
+              <h3>PRODUCT TYPES IN STORE</h3>
               <span class="material-icons-outlined">inventory_2</span>
             </div>
 			<h1 id="itemCountContainer">
@@ -370,7 +370,7 @@
           </div>
           <div class="card">
             <div class="card-inner">
-              <h3>SUPPLY COUNT</h3>
+              <h3>CURRENT SUPPLY COUNT</h3>
               <span class="material-icons-outlined">category</span>
             </div>
             <h1 id="itemSupplyCountContainer">
@@ -390,7 +390,7 @@
 		  <div class="card">
 			<div class="card-inner">
 				<h3>TOTAL PRODUCTS SOLD</h3>
-				<span class="material-icons-outline">shopping_bag</span>
+				<span class="material-icons-outlined">shopping_bag</span>
 			</div>
 			<h1 id="soldTotalProductsContainer">
 				<?php require './model/dashboard/getItemOverallSoldCount.php'; ?>
@@ -399,7 +399,7 @@
 		  <div class="card">
 			<div class="card-inner">
 				<h3>TOTAL PRODUCTS SOLD (WEEKLY)</h3>
-				<span class="material-icons-outline">shopping_bag</span>
+				<span class="material-icons-outlined">shopping_bag</span>
 			</div>
 			<h1 id="soldWeeklyProductsContainer">
 				<?php require './model/dashboard/getItemWeeklySoldCount.php'; ?>
