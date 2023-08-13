@@ -9,7 +9,7 @@
         }
 
         public function getProductTypeCount() {
-            $itemListQuery = 'SELECT COUNT(*) as item_count FROM item';
+            $itemListQuery = "SELECT COUNT(*) as item_count FROM item where status = 'Active'";
 
             $itemListStatement = $this->conn->prepare($itemListQuery);
             $itemListStatement->execute();
